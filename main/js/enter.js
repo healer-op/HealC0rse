@@ -160,11 +160,10 @@ document.querySelector("#row").insertAdjacentHTML("afterbegin", html);
 
 const params = new URLSearchParams(document.location.search);
 var link = params.get("link");
+var temp = link;
+temp=temp.replace(".mp4", "");
+document.title = `HealCourse | ${temp}`;
+document.getElementById("watch").innerHTML = `Watching ${temp}`
 var key= "aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3R1dGVkdWRlNjk0";
 link = `${atob(key)}${link}`
 var player = new Playerjs({id:"player", autoplay:"1", file:link});
-for(var k=0;k<d1.length;k++){
-    if(link ==d[k]){
-        document.getElementById("watch").innerHTML = `Watching Entrepreneurship/${d1[k]}`
-    }
-}

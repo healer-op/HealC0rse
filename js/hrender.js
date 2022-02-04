@@ -1,4 +1,6 @@
-fetch(`https://raw.githubusercontent.com/healer-op/HealCloud/main/json/courses.json`)
+const key="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2hlYWxlci1vcC9IZWFsQ2xvdWQvbWFpbi9qc29uL2NvdXJzZXMuanNvbg=="
+
+fetch(`${atob(key)}`)
     .then(response =>{
         if(!response.ok){
             throw Error("ERROR");
@@ -11,7 +13,6 @@ fetch(`https://raw.githubusercontent.com/healer-op/HealCloud/main/json/courses.j
         var lv = video[i].Key;
         var lb = lv;
         var lv = encodeURIComponent(lv.trim());
-        // var ls = `https://storage.googleapis.com/tutedude694/${lv}`
         return `
                 <div class="col-sm-6" id="${lb}">
                     <div class="card text-white bg-dark mb-3">
